@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+body {
+  background: url("../images/bg-top.svg") 100% 0 no-repeat, url("../images/bg-bottom.svg") 0 100% no-repeat;
+  background-color: #f6f6fe;
+  height: 100vh;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.container {
+  height: 100%;
+  border: 2px solid red;
+}
+
+.container .title {
+  color: #6d708d;
+  border: 2px solid red;
+  display: inline-block;
+  margin: auto;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.container .section_toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid red;
+}
+
+.container .section_toggle .toggle {
+  width: 60px;
+  height: 30px;
+  border-radius: 20px;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #696fdd), to(#a3a8f0));
+  background: linear-gradient(to left, #696fdd 50%, #a3a8f0);
+  position: relative;
+  cursor: pointer;
+}
+
+.container .section_toggle .toggle .round {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  top: 50%;
+  -webkit-transform: translate(0, -50%) scale(0.98);
+          transform: translate(0, -50%) scale(0.98);
+  background-color: #f6f6fe;
+  margin: 0 4px;
+  -webkit-transition: .2s linear;
+  transition: .2s linear;
+}
+
+.container .section_toggle .toggle .round:hover {
+  -webkit-transform: translate(0, -50%) scale(1.08);
+          transform: translate(0, -50%) scale(1.08);
+}
+
+.container .section_toggle .toggle .round.active {
+  -webkit-transform: translate(100%, -50%) scale(0.98);
+          transform: translate(100%, -50%) scale(0.98);
+}
+
+.container .section_toggle .toggle .round.active:hover {
+  -webkit-transform: translate(100%, -50%) scale(1.08);
+          transform: translate(100%, -50%) scale(1.08);
+}
+
+.container .section_toggle span {
+  color: #b3b5c6;
+}
+
+.container .price_cards .container {
+  border: 2px solid red;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.container .price_cards .card {
+  padding: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  background-color: #FFF;
+}
+
+.container .price_cards .card:nth-child(2) {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(50%, #696fdd), to(#a3a8f0));
+  background: linear-gradient(to top, #696fdd 50%, #a3a8f0);
+}
+
+.container .price_cards .card:nth-child(2) * {
+  color: #FFF !important;
+}
+
+.container .price_cards .card:nth-child(2) .btn {
+  background: #FFF;
+  color: #000 !important;
+}
+
+.container .price_cards .card .price {
+  font-size: 50px;
+  font-weight: bolder;
+  color: #494c5f;
+}
+
+.container .price_cards .card .wrapper div {
+  border-bottom: 1px solid #b3b5c6;
+  color: #6d708d;
+}
+
+.container .price_cards .card .wrapper div:first-child {
+  border-top: 1px solid #b3b5c6;
+}
+
+.container .price_cards .card .btn {
+  width: 100%;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #696fdd), to(#a3a8f0));
+  background: linear-gradient(to left, #696fdd 50%, #a3a8f0);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  height: 30px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */

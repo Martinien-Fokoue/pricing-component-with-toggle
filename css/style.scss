@@ -1,0 +1,145 @@
+$colors : (
+    Very-Light-Grayish-Blue: hsl(240, 78%, 98%),
+    Light-Grayish-Blue: hsl(234, 14%, 74%),
+    Grayish-Blue: hsl(233, 13%, 49%),
+    Dark-Grayish-Blue: hsl(232, 13%, 33%),
+    gradient_1 : hsl(236, 72%, 79%),
+    gradient_2 : hsl(237, 63%, 64%),
+);
+
+$size : 15px;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Montserrat;
+}
+
+body {
+    background: url('../images/bg-top.svg') 100% 0 no-repeat, url('../images/bg-bottom.svg') 0 100% no-repeat;
+    background-color: map-get($colors, Very-Light-Grayish-Blue);
+    height: 100vh;
+    font-size: $size;
+    font-weight: 700;
+}
+
+.container {
+    height: 100%;
+    border: 2px solid red;
+
+
+    & .title {
+        color: map-get($colors, Grayish-Blue);
+        border: 2px solid red;
+        display: inline-block;
+        margin: auto;
+        align-self: center;
+    }
+
+    & .section_toggle {
+        display: flex;
+        align-items: center;
+        border: 2px solid red;
+
+        & .toggle {
+            width: 60px;
+            height: 30px;
+            border-radius: 20px;
+            background: linear-gradient(to left, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
+            position: relative;
+            cursor: pointer;
+           
+            & .round {
+                position: absolute;
+                width: 25px;
+                height: 25px;
+                border-radius: 50%;
+                top: 50%;
+                transform: translate(0,-50%) scale(.98);
+                background-color: map-get($colors, Very-Light-Grayish-Blue);
+                margin: 0 4px;
+                transition: .2s linear;
+                &:hover{
+                    transform: translate(0, -50%) scale(1.08);
+                }
+
+                &.active {
+                    transform: translate(100%, -50%) scale(.98);
+                    &:hover{
+                        transform: translate(100%, -50%) scale(1.08);
+                    }
+                }
+            }
+        }
+
+        & span {
+            color: map-get($colors, Light-Grayish-Blue);
+        }
+    }
+
+    & .price_cards {
+
+        & .container{
+            border: 2px solid red;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        & .card {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-shadow: 0 3px 5px rgba($color: #000000, $alpha: .1);
+            border-radius: 5px;
+            background-color: #FFF;
+
+            &:nth-child(2){
+                transform: scale(1.1);
+                background: linear-gradient(to top, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
+                
+                & * {
+                    color: #FFF!important;
+                }
+                & .btn {
+                    background: #FFF;
+                    color: #000!important;
+                }
+            }
+
+
+            & .price {
+                font-size: 50px;
+                font-weight: bolder;
+                color: map-get($colors, Dark-Grayish-Blue);
+            }
+
+            & .wrapper {
+
+                & div {
+                    border-bottom: 1px solid map-get($colors, Light-Grayish-Blue);
+                    color: map-get($colors, Grayish-Blue);
+
+                    &:first-child{
+                        border-top: 1px solid map-get($colors, Light-Grayish-Blue);
+                    }
+                }
+            }
+
+            & .btn {
+                width: 100%;
+                background: linear-gradient(to left, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                border: none;
+                outline: none;
+                border-radius: 4px;
+                height: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
