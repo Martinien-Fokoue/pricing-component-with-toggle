@@ -21,26 +21,50 @@ body {
     background-color: map-get($colors, Very-Light-Grayish-Blue);
     height: 100vh;
     font-size: $size;
-    font-weight: 700;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media screen and (max-width : 700px){
+        background: url('../images/bg-top.svg') 140px -50px no-repeat;
+        background-color: map-get($colors, Very-Light-Grayish-Blue);
+    }
 }
 
 .container {
-    height: 100%;
-    border: 2px solid red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 90%;
+    width: 70%;
 
+    @media screen and (max-width : 700px){
+        width: 90%;
+        display: grid;
+        row-gap: 50px;
+        height: 80%;
+    }
+    
 
     & .title {
         color: map-get($colors, Grayish-Blue);
-        border: 2px solid red;
-        display: inline-block;
-        margin: auto;
-        align-self: center;
+        @media screen and (max-width : 700px){
+            text-align: center;
+        }
     }
 
     & .section_toggle {
         display: flex;
         align-items: center;
-        border: 2px solid red;
+        justify-content: space-between;
+        width: 280px;
+        color: map-get($colors, Light-Grayish-Blue);
+        @media screen and (max-width : 700px){
+            width: 85%;
+            margin: auto;
+        }
+
 
         & .toggle {
             width: 60px;
@@ -49,6 +73,10 @@ body {
             background: linear-gradient(to left, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
             position: relative;
             cursor: pointer;
+
+            &:hover {
+                background: map-get($colors, gradient_1);
+            }
            
             & .round {
                 position: absolute;
@@ -56,90 +84,137 @@ body {
                 height: 25px;
                 border-radius: 50%;
                 top: 50%;
-                transform: translate(0,-50%) scale(.98);
+                transform: translate(100%,-50%);
                 background-color: map-get($colors, Very-Light-Grayish-Blue);
                 margin: 0 4px;
-                transition: .2s linear;
-                &:hover{
-                    transform: translate(0, -50%) scale(1.08);
-                }
-
+                transition: transform .2s linear;
+        
                 &.active {
-                    transform: translate(100%, -50%) scale(.98);
-                    &:hover{
-                        transform: translate(100%, -50%) scale(1.08);
-                    }
+                    transform: translate(0, -50%);
+                    
                 }
             }
-        }
-
-        & span {
-            color: map-get($colors, Light-Grayish-Blue);
         }
     }
 
     & .price_cards {
-
-        & .container{
-            border: 2px solid red;
+        & .card_container {
+            margin: 25px;
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        & .card {
-            padding: 30px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            box-shadow: 0 3px 5px rgba($color: #000000, $alpha: .1);
-            border-radius: 5px;
-            background-color: #FFF;
-
-            &:nth-child(2){
-                transform: scale(1.1);
-                background: linear-gradient(to top, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
-                
-                & * {
-                    color: #FFF!important;
+            color: map-get($colors, Grayish-Blue);
+            @media screen and (max-width : 700px){
+                margin: 0;
+                display: grid;
+                row-gap: 20px;
+                grid-template-columns: 1fr;
+            }
+            & .card {
+                background-color: #FFF;
+                padding: 30px;
+                box-shadow: 0 2px 5px rgba($color: #000000, $alpha: .1);
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                border-radius: 5px;
+                width: 280px;
+                height: 350px;
+                font-weight: 700;
+                @media screen and (max-width : 700px){
+                   height: 370px;
+                   width: 100%;
+                   padding: 25px;
                 }
+
+                &:nth-child(2){
+                    transform: scale(1.07, 1.12);
+                    background: linear-gradient(to top, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));   
+                    color: #FFF;
+                    @media screen and (max-width : 700px){
+                        transform: scale(1);
+                    }
+
+                    & .price {
+                        color: #FFF;
+                    }
+
+                    & .btn {
+                        background: #FFF;
+                        color: map-get($colors, gradient_2);
+
+                        &:hover {
+                            background: transparent;
+                            color: #FFF;
+                            border-color: #FFF;
+                            
+                        }
+                    }
+                }
+
+                & .level {
+                    display: flex;
+                    justify-content: center;
+                }
+
+                & .price {
+                    font-size: 50px;
+                    color: map-get($colors, Dark-Grayish-Blue);
+                    text-align: center;
+
+                }
+
+                & .wrapper {
+                    & div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        padding: 10px;
+                        border-bottom: 1px solid map-get($colors, Light-Grayish-Blue);
+                        
+                        &:first-child {
+                            border-top: 1px solid map-get($colors, Light-Grayish-Blue);
+                        }
+                    }
+                }
+
                 & .btn {
-                    background: #FFF;
-                    color: #000!important;
-                }
-            }
-
-
-            & .price {
-                font-size: 50px;
-                font-weight: bolder;
-                color: map-get($colors, Dark-Grayish-Blue);
-            }
-
-            & .wrapper {
-
-                & div {
-                    border-bottom: 1px solid map-get($colors, Light-Grayish-Blue);
-                    color: map-get($colors, Grayish-Blue);
-
-                    &:first-child{
-                        border-top: 1px solid map-get($colors, Light-Grayish-Blue);
+                    border: 1px solid #FFF;
+                    outline: none;
+                    padding: 10px;
+                    border-radius: 5px;
+                    background: linear-gradient(to left, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));   
+                    color: #FFF;
+                    text-transform: uppercase;
+                    font-size: 10px!important;
+                    cursor: pointer;
+                    font-weight: bolder;
+                    transition: .2s linear;
+                    &:hover {
+                        background: linear-gradient(to left, #FFF, #FFF);   
+                        color: map-get($colors, gradient_2);
+                        border-color: map-get($colors, Grayish-Blue);
                     }
                 }
             }
+        }
+    }
 
-            & .btn {
-                width: 100%;
-                background: linear-gradient(to left, map-get($colors, gradient_2) 50%, map-get($colors, gradient_1));
-                text-transform: uppercase;
-                letter-spacing: 1px;
-                border: none;
-                outline: none;
-                border-radius: 4px;
-                height: 30px;
-                cursor: pointer;
-            }
+    & .attribution {
+        font-size: 16px;
+
+        @media screen and (max-width : 700px){
+            font-size: 12px;
+            margin-bottom: 50px;
+        }
+
+        & a{
+            color: map-get($colors, gradient_2);
+            text-decoration: none;
         }
     }
 }
+
+
+
 
